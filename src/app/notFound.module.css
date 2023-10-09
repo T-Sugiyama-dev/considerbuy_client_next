@@ -1,0 +1,24 @@
+
+.container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.wrapper h1 {
+  color: #2d329a;
+  font-size: 75px;
+  margin: 3px 0px;
+}
+
+.wrapper h2 {
+  color: #2d329a;
+  font-size: 25px;
+  margin: 3px 0px;
+}
