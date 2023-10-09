@@ -34,6 +34,7 @@ export const IncomeForm = ({ callback }: IncomeFormProps) => {
             })}
           >
             <option value="">選択してください</option>
+            <option value="3000000">300万円</option>
             <option value="5000000">500万円</option>
             <option value="7000000">700万円</option>
             <option value="10000000">1000万円</option>
