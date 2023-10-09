@@ -81,7 +81,7 @@ export const Dashboard = ({ result, switchToForm }: DashboardProps) => {
             <div className={dashboard.content_wrapper}>
               <p className={dashboard.text}>ROI</p>
               <p className={dashboard.text}><b>{result?.roi.toLocaleString()}</b>%</p>
-              <p className={dashboard.desc}>※一般的に「費用対効果が良い」とされるラインは、ROIが300％（3倍）以上だとされています。</p>
+              <p className={dashboard.desc}>※ROIが高いかどうかは、業界や具体的なビジネスプランに依存します。ツールの導入などにおけるROIは、200％や300％という数値になることもあります。</p>
             </div>
           </motion.div>
 
