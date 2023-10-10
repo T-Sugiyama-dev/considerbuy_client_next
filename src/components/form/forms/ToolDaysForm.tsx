@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useFormContext } from "../FormContext";
 import { ToolDaysFormData } from "@/types";
-import { numPattern, validateMax } from "@/lib";
+import { numPattern, validateMax } from "@/lib/form";
 import { error_number, error_blank, error_min_1, error_max_work_days } from "../error_message";
 import form from '../form.module.css';
 

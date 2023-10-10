@@ -1,9 +1,8 @@
 "use client"
-
 import top from "./top.module.css";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { topDelay, topProps } from "@/lib";
+import { topDelay, topProps } from "@/lib/animation";
 
 export default function Top() {
   return (

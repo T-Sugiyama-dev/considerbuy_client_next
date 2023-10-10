@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { ProductivityFormData } from "@/types";
-import { numPattern, decimalPattern, validateMax } from "@/lib";
+import { numPattern, decimalPattern, validateMax } from "@/lib/form";
 import { error_blank, error_number_decimal, error_min_0, error_max_1000000 } from "../error_message";
 import form from '../form.module.css';
 
@@ -24,7 +24,7 @@ export const ProductivityForm = ({ callback }: ProductivityFormProps) => {
 
   const onSubmit: SubmitHandler<ProductivityFormData> = (data) => {
     let inputValue: string = data.productivity.toString();
-    inputValue = inputValue.replace(/\D/g, "");
+    inputValue = inputValue.replace(/[^\d.]/g, "");
     data.productivity = Number(inputValue);
 
     if(data.productivity <= maxNum) {

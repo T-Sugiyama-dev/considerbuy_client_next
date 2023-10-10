@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { ToolTermFormData } from "@/types";
-import { numPattern, decimalPattern, validateMax } from "@/lib";
+import { numPattern, decimalPattern, validateMax } from "@/lib/form";
 import { error_blank, error_number_decimal, error_min_001, error_max_100 } from "../error_message";
 import form from '../form.module.css';
 
@@ -24,7 +24,7 @@ export const ToolTermForm = ({ callback }: ToolTermFormProps) => {
 
   const onSubmit: SubmitHandler<ToolTermFormData> = (data) => {
     let inputValue: string = data.toolTerm.toString();
-    inputValue = inputValue.replace(/\D/g, "");
+    inputValue = inputValue.replace(/[^\d.]/g, "");
     data.toolTerm = Number(inputValue);
 
     if(data.toolTerm <= maxNum) {

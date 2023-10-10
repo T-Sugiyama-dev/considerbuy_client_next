@@ -1,8 +1,8 @@
 "use client";
-
 import { useState, useEffect } from "react";
 import { ResultData } from "@/types";
-import { convertHours, checkPayback, convertDays, dashboardDelay, dashboardProps } from "../../lib";
+import { convertHours, checkPayback, convertDays } from "../../lib/dashboard";
+import { dashboardDelay, dashboardProps } from "../../lib/animation";
 import { motion } from "framer-motion";
 import dashboard from './dashboard.module.css';
 
@@ -34,7 +34,7 @@ export const Dashboard = ({ result, switchToForm }: DashboardProps) => {
       setYmdPayback("使用期間内の回収不可");
       setClassName("close");
     }
-  }, [])
+  }, []);
 
   return (
     <div className={dashboard.container}>
