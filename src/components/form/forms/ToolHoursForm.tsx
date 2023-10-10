@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useFormContext } from "../FormContext";
 import { ToolHoursFormData } from "@/types";
-import { numPattern, decimalPattern, validateMax } from "@/lib";
+import { numPattern, decimalPattern, validateMax } from "@/lib/form";
 import { error_blank, error_number_decimal, error_min_001, error_max_work_hours } from "../error_message";
 import form from '../form.module.css';
 
@@ -26,7 +26,7 @@ export const ToolHoursForm = ({ callback }: ToolHoursFormProps) => {
   
   const onSubmit: SubmitHandler<ToolHoursFormData> = (data) => {
     let inputValue: string = data.toolHours.toString();
-    inputValue = inputValue.replace(/\D/g, "");
+    inputValue = inputValue.replace(/[^\d.]/g, "");
     data.toolHours = Number(inputValue);
 
     if(data.toolHours <= maxNum) {

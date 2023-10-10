@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { InitialCostFormData } from "@/types";
-import { numPattern, validateMax } from "@/lib";
+import { numPattern, validateMax } from "@/lib/form";
 import { error_blank, error_number, error_min_0, error_max_1000000000 } from "../error_message";
 import form from '../form.module.css';
 

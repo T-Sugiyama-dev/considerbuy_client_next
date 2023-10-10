@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { WorkDaysFormData } from "@/types";
-import { numPattern, validateMax } from "@/lib";
+import { numPattern, validateMax } from "@/lib/form";
 import { useFormContext } from "../FormContext";
 import { error_blank, error_number, error_min_1, error_max_7 } from "../error_message";
 import form from '../form.module.css';
