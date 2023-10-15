@@ -50,7 +50,7 @@ export const ToolTermForm = ({ callback }: ToolTermFormProps) => {
       <form className={form.form_wrapper} onSubmit={handleSubmit(onSubmit)}>
         <p className={form.form_title}>何年間、そのツールを使用する予定ですか？</p>
         <input
-          inputMode="numeric"
+          inputMode="decimal"
           placeholder="年"
           {...register('toolTerm', {
             required: {

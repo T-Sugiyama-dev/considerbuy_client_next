@@ -52,7 +52,7 @@ export const ToolHoursForm = ({ callback }: ToolHoursFormProps) => {
       <form className={form.form_wrapper} onSubmit={handleSubmit(onSubmit)}>
         <p className={form.form_title}>{previousNumber}時間の業務で、そのツールを何時間使用しますか？</p>
         <input
-          inputMode="numeric"
+          inputMode="decimal"
           placeholder="時間"
           {...register('toolHours', {
             required: {
