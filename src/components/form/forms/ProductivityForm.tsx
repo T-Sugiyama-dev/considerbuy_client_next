@@ -50,7 +50,7 @@ export const ProductivityForm = ({ callback }: ProductivityFormProps) => {
       <form className={form.form_wrapper} onSubmit={handleSubmit(onSubmit)}>
         <p className={form.form_title}>そのツールの使用によって、どのくらいの生産性の向上を見込んでいますか？</p>
         <input
-          inputMode="numeric"
+          inputMode="decimal"
           placeholder="%"
           {...register('productivity', {
             required: {

@@ -44,14 +44,14 @@ export const Dashboard = ({ result, switchToForm }: DashboardProps) => {
         <div className={dashboard.content_container}>
           <motion.div {...dashboardProps}>
             <div className={dashboard.content_wrapper}>
-              <p className={dashboard.text}>時給</p>
+              <p className={dashboard.category}>時給</p>
               <p className={dashboard.text}><b>{result?.hourlyWage.toLocaleString()}</b>円</p>
             </div>
           </motion.div>
 
           <motion.div {...dashboardProps} animate={{ ...dashboardProps.animate, transition: { delay: dashboardDelay, ease: "easeInOut", duration: 1, } }}>
             <div className={dashboard.content_wrapper}>
-              <p className={dashboard.text}>総費用</p>
+              <p className={dashboard.category}>総費用</p>
               <p className={dashboard.text}><b>{result?.totalCost.toLocaleString()}</b>円</p>
             </div>
           </motion.div>
@@ -60,7 +60,7 @@ export const Dashboard = ({ result, switchToForm }: DashboardProps) => {
         <div className={dashboard.content_container}>
           <motion.div {...dashboardProps} animate={{ ...dashboardProps.animate, transition: { delay: dashboardDelay * 2, ease: "easeInOut", duration: 1, } }}>
             <div className={dashboard.content_wrapper}>
-              <p className={dashboard.text}>生産性 / 日</p>
+              <p className={dashboard.category}>生産性 / 日</p>
               <p className={dashboard.text}><b>{result?.dailySavedMinutes}</b>分</p>
               <p className={dashboard.text}>&#8594; &#10005; 時給 = <b>{result?.dailyProfit.toLocaleString()}</b>円</p>
             </div>
@@ -68,7 +68,7 @@ export const Dashboard = ({ result, switchToForm }: DashboardProps) => {
 
           <motion.div {...dashboardProps} animate={{ ...dashboardProps.animate, transition: { delay: dashboardDelay * 3, ease: "easeInOut", duration: 1, } }}>
             <div className={dashboard.content_wrapper}>
-              <p className={dashboard.text}>生産性 / 使用期間</p>
+              <p className={dashboard.category}>生産性 / 使用期間</p>
               <p className={dashboard.text}><b>{result?.savedTime.toLocaleString()}</b>時間</p>
               <p className={dashboard.text}>{ymdSavedTime}</p>
               <p className={dashboard.text}>&#8594; &#10005; 時給 = <b>{result?.profit.toLocaleString()}</b>円</p>
@@ -79,7 +79,7 @@ export const Dashboard = ({ result, switchToForm }: DashboardProps) => {
         <div className={dashboard.content_container}>
           <motion.div {...dashboardProps} animate={{ ...dashboardProps.animate, transition: { delay: dashboardDelay * 4, ease: "easeInOut", duration: 1, } }}>
             <div className={dashboard.content_wrapper}>
-              <p className={dashboard.text}>ROI</p>
+              <p className={dashboard.category}>ROI</p>
               <p className={dashboard.text}><b>{result?.roi.toLocaleString()}</b>%</p>
               <p className={dashboard.desc}>※ROIが高いかどうかは、業界や具体的なビジネスプランに依存します。ツールの導入などにおけるROIは、200％や300％という数値になることもあります。</p>
             </div>
@@ -87,7 +87,7 @@ export const Dashboard = ({ result, switchToForm }: DashboardProps) => {
 
           <motion.div {...dashboardProps} animate={{ ...dashboardProps.animate, transition: { delay: dashboardDelay * 5, ease: "easeInOut", duration: 1, } }}>
             <div className={dashboard.content_wrapper}>
-              <p className={dashboard.text}>回収期間</p>
+              <p className={dashboard.category}>回収期間</p>
               <div className={className}>
                 <p className={dashboard.text}><b>{result?.paybackDays.toLocaleString()}</b>日</p>
               </div>

@@ -53,7 +53,7 @@ export const WorkHoursForm = ({ callback }: WorkHoursFormProps) => {
       <form className={form.form_wrapper} onSubmit={handleSubmit(onSubmit)}>
         <p className={form.form_title}>1日の何時間、働きますか？</p>
         <input
-          inputMode="numeric"
+          inputMode="decimal"
           placeholder="時間"
           {...register('workHours', {
             required: {
