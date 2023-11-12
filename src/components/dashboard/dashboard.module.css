@@ -23,17 +23,43 @@
 
 .content_container {
   display: flex;
-  justify-content: flex-start;
+  justify-content: space-evenly;
   width: 100%;
+  word-break: break-all;
+}
+
+.hourlyWage_wrapper {
+  flex: 0.35;
+}
+
+.totalCost_wrapper {
+  flex: 0.55;
+}
+
+.dailyProductivity_wrapper {
+  flex: 0.4;
+}
+
+.totalProductivity_wrapper {
+  flex: 0.5;
+}
+
+.roi_wrapper {
+  flex: 0.6;
+}
+
+.payback_wrapper {
+  flex: 0.3;
 }
 
 .content_wrapper {
   padding: 30px;
-  margin: 15px 20px;
+  margin: 15px 0px;
   display: inline-block;
   border-radius: 30px;
   background-color: #FFFFFF;
   box-shadow: 0px 15px 20px rgba(0,0,0,0.15);
+  width: 100%;
 }
 
 .text {
@@ -77,7 +103,7 @@
   }
 
   .text b {
-    font-size: 45px;
+    font-size: 50px;
   }
 
   .text {
@@ -88,6 +114,10 @@
 @media (max-width: 900px) {
   .wrapper {
     padding: 3%;
+  }
+
+  .text b {
+    font-size: 40px;
   }
 }
 
