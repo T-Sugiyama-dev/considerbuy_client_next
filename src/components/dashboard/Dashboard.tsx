@@ -42,14 +42,21 @@ export const Dashboard = ({ result, switchToForm }: DashboardProps) => {
         <h1 className={dashboard.title}>Analytics</h1>
 
         <div className={dashboard.content_container}>
-          <motion.div {...dashboardProps}>
+          <motion.div
+            {...dashboardProps}
+            className={dashboard.hourlyWage_wrapper}
+          >
             <div className={dashboard.content_wrapper}>
               <p className={dashboard.category}>時給</p>
               <p className={dashboard.text}><b>{result?.hourlyWage.toLocaleString()}</b>円</p>
             </div>
           </motion.div>
 
-          <motion.div {...dashboardProps} animate={{ ...dashboardProps.animate, transition: { delay: dashboardDelay, ease: "easeInOut", duration: 1, } }}>
+          <motion.div
+            {...dashboardProps}
+            animate={{ ...dashboardProps.animate, transition: { delay: dashboardDelay, ease: "easeInOut", duration: 1, } }}
+            className={dashboard.totalCost_wrapper}
+          >
             <div className={dashboard.content_wrapper}>
               <p className={dashboard.category}>総費用</p>
               <p className={dashboard.text}><b>{result?.totalCost.toLocaleString()}</b>円</p>
@@ -58,26 +65,48 @@ export const Dashboard = ({ result, switchToForm }: DashboardProps) => {
         </div>
 
         <div className={dashboard.content_container}>
-          <motion.div {...dashboardProps} animate={{ ...dashboardProps.animate, transition: { delay: dashboardDelay * 2, ease: "easeInOut", duration: 1, } }}>
+          <motion.div
+            {...dashboardProps}
+            animate={{ ...dashboardProps.animate, transition: { delay: dashboardDelay * 2, ease: "easeInOut", duration: 1, } }}
+            className={dashboard.dailyProductivity_wrapper}
+          >
             <div className={dashboard.content_wrapper}>
               <p className={dashboard.category}>生産性 / 日</p>
-              <p className={dashboard.text}><b>{result?.dailySavedMinutes}</b>分</p>
-              <p className={dashboard.text}>&#8594; &#10005; 時給 = <b>{result?.dailyProfit.toLocaleString()}</b>円</p>
+              <p className={dashboard.text}><b>{result?.dailySavedMinutes.toLocaleString()}</b>分</p>
+              <p className={dashboard.text}>
+                &#8594; &#10005; 時給 =
+                <br />
+                <b>{result?.dailyProfit.toLocaleString()}</b>
+                円
+              </p>
             </div>
           </motion.div>
 
-          <motion.div {...dashboardProps} animate={{ ...dashboardProps.animate, transition: { delay: dashboardDelay * 3, ease: "easeInOut", duration: 1, } }}>
+          <motion.div
+            {...dashboardProps}
+            animate={{ ...dashboardProps.animate, transition: { delay: dashboardDelay * 3, ease: "easeInOut", duration: 1, } }}
+            className={dashboard.totalProductivity_wrapper}
+          >
             <div className={dashboard.content_wrapper}>
               <p className={dashboard.category}>生産性 / 使用期間</p>
               <p className={dashboard.text}><b>{result?.savedTime.toLocaleString()}</b>時間</p>
               <p className={dashboard.text}>{ymdSavedTime}</p>
-              <p className={dashboard.text}>&#8594; &#10005; 時給 = <b>{result?.profit.toLocaleString()}</b>円</p>
+              <p className={dashboard.text}>
+                &#8594; &#10005; 時給 =
+                <br />
+                <b>{result?.profit.toLocaleString()}</b>
+                円
+              </p>
             </div>
           </motion.div>
         </div>
 
         <div className={dashboard.content_container}>
-          <motion.div {...dashboardProps} animate={{ ...dashboardProps.animate, transition: { delay: dashboardDelay * 4, ease: "easeInOut", duration: 1, } }}>
+          <motion.div
+            {...dashboardProps}
+            animate={{ ...dashboardProps.animate, transition: { delay: dashboardDelay * 4, ease: "easeInOut", duration: 1, } }}
+            className={dashboard.roi_wrapper}
+          >
             <div className={dashboard.content_wrapper}>
               <p className={dashboard.category}>ROI</p>
               <p className={dashboard.text}><b>{result?.roi.toLocaleString()}</b>%</p>
@@ -85,7 +114,11 @@ export const Dashboard = ({ result, switchToForm }: DashboardProps) => {
             </div>
           </motion.div>
 
-          <motion.div {...dashboardProps} animate={{ ...dashboardProps.animate, transition: { delay: dashboardDelay * 5, ease: "easeInOut", duration: 1, } }}>
+          <motion.div
+            {...dashboardProps} 
+            animate={{ ...dashboardProps.animate, transition: { delay: dashboardDelay * 5, ease: "easeInOut", duration: 1, } }}
+            className={dashboard.payback_wrapper}
+          >
             <div className={dashboard.content_wrapper}>
               <p className={dashboard.category}>回収期間</p>
               <div className={className}>
